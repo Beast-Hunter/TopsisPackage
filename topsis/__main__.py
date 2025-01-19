@@ -21,8 +21,6 @@ def validateInputs(input, weights, impacts):
         print("Error: Columns from the 2nd to the last must contain numeric values only.")
         sys.exit(1)
 
-
-
     weights_list = weights.split(",")
     impacts_list = impacts.split(",")
 
@@ -116,5 +114,5 @@ def main():
         print(f'Error: {e}')
 
 
-if __name__ == "102203234":
+if __name__ == "__main__":
     main()

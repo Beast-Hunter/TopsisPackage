@@ -3,6 +3,18 @@ import argparse
 import numpy as np
 import pandas as pd
 
+def readInputFile(input):
+    if input.endswith('.csv'):
+        df = pd.read_csv(input)
+    elif input.endswith('.xlsx') or input.endswith('.xls'):
+        df = pd.read_excel(input)
+    else:
+        raise ValueError('Unsupported file format. Use CSV or XLSX.')
+    
+    data = df.iloc[:, 1:].values
+    alternatives = df.iloc[:, 0].values if df.shape[1] > data.shape[1] else None
+    return data, alternatives
+
 def validateInputs(input, weights, impacts):
     try:
         data = pd.read_csv(input)
@@ -20,8 +32,6 @@ def validateInputs(input, weights, impacts):
     if not data.iloc[:, 1:].apply(lambda col: pd.api.types.is_numeric_dtype(col)).all():
         print("Error: Columns from the 2nd to the last must contain numeric values only.")
         sys.exit(1)
-
-
 
     weights_list = weights.split(",")
     impacts_list = impacts.split(",")
@@ -64,18 +74,6 @@ def topsis(data, weights, impacts):
     rank = score.argsort()[::-1] + 1
 
     return score, rank
-
-def readInputFile(input):
-    if input.endswith('.csv'):
-        df = pd.read_csv(input)
-    elif input.endswith('.xlsx') or input.endswith('.xls'):
-        df = pd.read_excel(input)
-    else:
-        raise ValueError('Unsupported file format. Use CSV or XLSX.')
-    
-    data = df.iloc[:, 1:].values
-    alternatives = df.iloc[:, 0].values if df.shape[1] > data.shape[1] else None
-    return data, alternatives
 
 def main():
     parser = argparse.ArgumentParser(description = 'Topsis') 
