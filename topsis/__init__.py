@@ -1,9 +1,9 @@
+__version__ = '1.0.0'
+
 import argparse
 import numpy as np
 import pandas as pd
 from .__main__ import topsis
-
-__version__ = 1.0.0
 
 def readInputFile(input):
     if input.endswith('.csv'):
