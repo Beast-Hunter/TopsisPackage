@@ -13,7 +13,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Beast-Hunter/TopsisPackage",
     author="Guramrit Singh",
-    author_email="gsingh1_be22@thapar.edu",
+    author_email="guramrit.singh8@gmail.com",
     license="MIT",
     classifiers=[
         "License :: OSI Approved :: MIT License",
@@ -30,7 +30,7 @@ setup(
     install_requires=['numpy', 'pandas'],
     entry_points={
         'console_scripts': [
-            'topsis = topsis.__main__:main',
+            'topsis = topsis.102203234:main',
         ],
     },
     python_requires=">=3.6",
