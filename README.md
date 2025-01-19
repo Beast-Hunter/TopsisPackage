@@ -21,7 +21,7 @@ pip install topsis
 Alternatively, you can clone the repository and install the package manually:
 
 ```bash
-git clone https://github.com/yourusername/topsis.git
+[https://github.com/Beast-Hunter/TopsisPackage.git]
 cd topsis
 python setup.py install
 ```
