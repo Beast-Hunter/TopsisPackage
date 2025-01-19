@@ -30,7 +30,7 @@ setup(
     install_requires=['numpy', 'pandas'],
     entry_points={
         'console_scripts': [
-            'topsis = topsis.102203234:main',
+            'topsis = topsis.__main__:main',
         ],
     },
     python_requires=">=3.6",
