@@ -116,5 +116,5 @@ def main():
         print(f'Error: {e}')
 
 
-if __name__ == "102203234":
+if __name__ == "__main__":
     main()
